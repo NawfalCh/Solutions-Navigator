@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klammerpaar_Checker</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        .title{
+            text-align: center;
+            padding: 80px;
+           
+        }
+        .content{
+            
+            text-align: center;
+        }
+        .tarea{
+            width: 350px;
+            min-height: 300px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: rgba(248, 247, 247, 0.867);
+        }
+        .button{
+            background-color: rgb(142, 141, 141);
+            width: 100px;
+            padding: 20px 15px;
+            display:inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+        .button:hover{
+            background-color:rgb(181, 177, 177) ;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title">
+        <h1>Klammerpaar Checker</h1>
+
+    </div>
+    <div class="content">
+        <textarea id="text" class="tarea" placeholder="Enter Text..."></textarea>
+        <br>
+        <span class="button" id="sp" onclick="klammer()">check</span>
+       <a href="Klammerpaar.html" class="button" id="link">Try again</a>
+        <p id="para"></p>
+
+    </div>
+    <script>
+        let mytextarea=document.getElementById('text');
+        let mypara=document.getElementById('para');
+        
+        function checkklammer(){
+            const stack = [];
+            const bracketLookup={
+                '{':'}',
+                '(':')',
+                '[':']',
+            }
+            const text =mytextarea.value;
+            
+            for(const key of text){
+                if(Object.keys(bracketLookup).includes(key)){
+                    stack.push(key);
+                }else if(Object.values(bracketLookup).includes(key)){
+                    const lastbracket =stack.pop();
+                    if(bracketLookup[lastbracket]!==key){
+                       return false;
+                    }
+
+                }
+                
+            }
+            
+           return stack.length=== 0;
+        }
+        function klammer(){
+            if(!checkklammer()){
+                mytextarea.style.backgroundColor='rgba(255, 0, 0, 0.3)';
+                mytextarea.style.color='red';
+                mypara.innerHTML='Error';
+            }else{
+                mytextarea.style.backgroundColor='rgba(0, 255, 0, 0.4)';
+                mytextarea.style.color='green';
+                mypara.innerHTML='Correct';
+            }
+        }
+
+    </script>
+    
+</body>
+</html>

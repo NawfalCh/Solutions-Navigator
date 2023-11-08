@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet"
+     href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://kit.fontawesome.com/54250ed647.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
+    <title>WebEng</title>
+</head>
+<body>
+   
+    <div class="sidebar" id="sidebar">
+        <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="../01_HTTP_URI_HTML/uebung01.html">01 Einfürung</a>
+        <a href="../02_CSS/uebung02.html">02 CSS</a>
+        <a href="../03_RWD/uebung03.html">03 RWD</a>
+        <a href="../05_DOM/uebung05.html">05 DOM</a>
+        <a href="../06_ECMAScript/uebung06.html">06 ECMAScript</a>
+        <a href="../07_Funktionale_Prog/uebung07.html">07 Funktionale prog</a>
+        <a href="../08_Asynchrones_JavaScript/uebung08.html">08 Asynchrones JavaScript</a>
+        <a href="#menu" class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="myFunction()"></i>
+        </a>  
+    </div>
+    <div class="maincontent"> 
+        <h1>Übung 6: ECMAScript (ES)</h1>
+        <details>
+            <summary>Klammerpaare</summary>
+            <div class="akkordeon-inhalt">
+                <a class="button" href="https://github.com/NawfalCh/Solution-Navigator_HTML_CSS_JS/blob/master/06_ECMAScript/Klammerpaar.html" target="_blank">Code</a><br>
+                <iframe frameborder="0" style="width: 100%; height: 100vh; margin-top: 1em"
+                            src="Klammerpaar.html"></iframe>
+            </div>
+        </details>
+        <details>
+            <summary>Topologische Iterierbarkeit</summary>
+            <div class="akkordeon-inhalt">
+                <a class="button" href="https://github.com/NawfalCh/Solution-Navigator_HTML_CSS_JS/tree/master/06_ECMAScript" target="_blank">Code</a><br>
+                <iframe frameborder="0" style="width: 100%; height: 100vh; margin-top: 1em"
+                            src="topSort.html"></iframe>
+            </div>
+        </details>
+            
+       
+        
+
+    </div>
+
+    <script >
+        function myFunction() {
+            const x = document.getElementById("sidebar");
+            if (x.className === "sidebar") {
+                x.className += " responsive";
+            } else {
+                x.className = "sidebar";
+            }
+        }
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    
+</body>
+</html>

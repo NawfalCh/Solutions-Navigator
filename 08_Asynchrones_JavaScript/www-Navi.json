@@ -1,0 +1,90 @@
+{
+    "html": {
+        "head": {
+            "content": "Das <head> HTML Element legt den Kopf eines Dokuments fest. In diesem werden Informationen für das Dokument angegeben, darunter der Dokumententitel und Meta-Daten.",
+            "references":["https://developer.mozilla.org/de/docs/Web/API/HTMLHeadElement"]
+        },
+        "body":{
+            "content":"Das HTML <body> Element repräsentiert den Inhalt eines HTML Dokuments. Es gibt nur ein Element in einem Dokument.",
+            "references":["https://developer.mozilla.org/de/docs/Web/HTML/Element/body"]
+             
+        },
+      "headings": {
+        "content": "Die Überschrift-Elemente bestehen aus sechs verschiedenen Levels. Das 'h1'-Element ist die Überschrift mit der höchsten Gewichtung und das 'h6'-Element mit der kleinsten. Ein Überschriften-Element beschreibt das Thema des Bereiches, welcher der Überschrift folgt. Überschriften können auch verwendet werden, um ein Inhaltsverzeichnis für ein Dokument automatisch zu erstellen.",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Web/HTML/Element/h1-h6"
+        ]
+      },
+      "paragraph": {
+        "content": "Das 'p'-Element erzeugt einen Absatz, den zusammenhängenden Abschnitt eines längeren Textes. In HTML kann ein 'p'-Element jedoch für jedwede Art von zu gruppierendem, zusammenhängendem Inhalt genutzt werden, zum Beispiel Bilder oder Formularfelder.",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Web/HTML/Element/p"
+        ]
+      },
+      "div": {
+        "content":"Der wesentliche Unterschied zwischen <div> und anderen Block-Elementen wie beispielsweise <article> oder dem Paragraph-Element <p> ist die semantische Bedeutung bzw. das Fehlen dieser. Während <article> einen Artikel, einen eigenständigen Bereich eines Dokuments darstellt und Paragraph-Element <p> einen Textabsatz, gibt <div> seinem Inhalt keine Bedeutung. <div> sollte deshalb nur genutzt werden, falls kein anderes Block-Element eine zutreffendere Aussage macht. Der Einsatzbereich von <div> ist die Gruppierung von Elementen alleine zum Zweck der Gestaltung oder des programmatischen Zugriffs (mit Hilfe des class- oder id-Attributs), oder weil sie die gleichen Attribut-Werte besitzen, wie zum Beispiel das Attribut lang.",
+        "references": ["https://developer.mozilla.org/de/docs/Web/HTML/Element/div"]
+      }
+    },
+    "css": {
+      "selectors": {
+        "content": "Selektoren definieren, auf welche Elemente eine Reihe von CSS Regeln angewendet wird.",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Web/CSS/CSS_Selectors"
+        ]
+      },
+      "colors": {
+        "content": "Der CSS Datentyp Color beschreibt eine Farbe im sRGB Farbraum. Eine Farbe kann auf eine von drei Arten beschrieben werden: Schlüsselworte, rgb und rgba, hsl und hsla. ...",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Web/CSS/Farben"
+        ]
+      },
+      "Flexbox":{
+        "content":"Flexbox ist eine moderne und einfache Möglichkeit, responsive und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen wie position, float oder clear nutzen zu müssen. Dabei kann nicht nur die Größendarstellung, sondern auch die Reihenfolge der Elemente unabhängig vom HTML-Code durch CSS festgelegt werden.",
+        "references":["https://wiki.selfhtml.org/wiki/CSS/Tutorials/Flexbox"]
+      },
+      "Grid":{
+        "content":"CSS Grid Layout zeichnet sich dadurch aus, dass eine Seite in Hauptbereiche unterteilt wird oder die Beziehung zwischen Teilen eines Steuerelements, das aus HTML-Grundelementen besteht, in Bezug auf Größe, Position und Layer definiert wird. Grid Layout ermöglicht es, Elemente in Spalten und Reihen auszurichten, ähnlich wie in Tabellen. Jedoch gibt es viel mehr Gestaltungsmöglichkeiten und diese sind einfacher umzusetzen mit CSS Grid als es mit Tabellen der Fall war. Beispielsweise kann das Kindelement eines Grid-Container-Elements so positioniert werden, dass es andere überlappt und überlagert, ähnlich wie bei mit CSS positionierten Elementen.",
+        "references":["https://developer.mozilla.org/de/docs/Web/CSS/CSS_Grid_Layout"]
+      }
+    },
+    "javascript": {
+      "function": {
+        "content": "Funktionen sind ein Grundbaustein in JavaScript. Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen, um eine Aufgabe auszuführen oder eine Wert auszurechnen. Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen"
+        ]
+      },
+      "object": {
+        "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
+        "references": [
+          "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
+        ]
+      },
+      "DOM":{
+        "content": "Das DOM ist eigentlich eine Schnittstelle zwischen JavaScript und HTML-Dokumenten, sein Name Document Object Model gründet sich auf das ihr zugrundeliegende Objektmodell. Ein HTML-Dokument besteht ja eigentlich nur aus reinem Text, der erst vom Browser ausgelesen und geparst wird. Die einzelnen Elemente werden so in einer Baumstruktur als Unterobjekte des window-Objekts dargestellt.",
+        "references":["https://wiki.selfhtml.org/wiki/JavaScript/Tutorials/DOM/Was_ist_das_DOM"]
+      },
+      "Class":{
+        "content":"JavaScript Klassen, eingeführt in ECMAScript 2015, sind syntaktischer Zucker für das bestehende, auf Prototypen basierende, Vererbungsmodell von JavaScript. Diese Syntaxerweiterung führt kein neues OOP-Modell in die Sprache ein. JS Klassen ermöglichen es, mit klarer und verständlicher Syntax Objekte zu erstellen und Vererbung in Javascript zu realisieren. Klassen sind eigentlich Funktionen. Analog zu Funktionsausdrücken und Funktionsdeklarationen hat die Klassensyntax zwei Komponenten: Klassenausdrücke und Klassendeklarationen.",
+        "references":["https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Classes"]
+      },
+      "Promise":{
+        "content":"Ein Promise ist ein Objekt, das die finale Beendigung einer asynchronen Operation repräsentiert. Je nachdem, ob die Operation erfolgreich oder fehlerhaft beendet wurde, wird das Promise entsprechend gekennzeichnet. Da in den meisten Fällen bereits existierende Promises benutzt werden, wird diese Anleitung zuerst die Benutzung von zurückgegebenen Promises erklären, und dann darauf eingehen, wie diese erzeugt werden. Grob gesagt ist ein Promise ein zurückgegebenes Objekt, an welches Callback-Funktionen angehängt werden können, anstatt dass diese einer Funktion übergeben werden.",
+        "references":["https://developer.mozilla.org/de/docs/Web/API/Fetch_API"]
+      },
+      "Async":{
+        "content":"Die async function Deklaration definiert eine asynchrone Funktion, die ein AsyncFunction Objekt zurück gibt. Asynchrone Funktionen laufen über den Event Loop außerhalb des üblichen Kontrollflusses, und geben als Ergebnis ein implizites Promise Objekt zurück. Die Syntax und der Aufbau des Codes bei einer asynchronen Funktion ähnelt allerdings der den standardmässigen synchronen Funktionen. Eine async function kann auch durch den async function expression Ausdruck definiert werden.",
+        "references":["https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/async_function"]
+      },
+      "Fetch":{
+        "content":"Die Fetch API bietet eine Schnittstelle zum Abrufen von Ressourcen (auch über das Netzwerk). Wer schon einmal mit XMLHttpRequest gearbeitet hat wird Ähnlichkeiten erkennen. Die neue API bietet jedoch einen ganzen Satz leistungsfähigerer und flexiblerer Funktionen.",
+        "references":["https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/async_function"]
+      }
+
+    }
+  }
+
+
+
+ 

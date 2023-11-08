@@ -1,0 +1,160 @@
+
+
+
+
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+}
+
+.sidebar {
+    
+    width: 200px;
+    height: 100vh;
+    background-color: #f1f1f1;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    transform: scale(1.2);
+}
+  .sidebar .menu-icon{
+    display: none;
+}
+  .fa-solid{
+    font-size: 25px;
+}
+  .maincontent{
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    margin-left: 250px;
+    padding: 1px 16px;
+}
+.container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
+}
+.bild{
+  width: 250px;
+  height: 150px;
+}
+.galerie{
+  border: 1px solid black;
+  border-radius: 7px;
+  margin-bottom: 5px;
+}
+.galerie a{
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  background-color: #36aedd;
+  color: black;
+  border-radius: 7px;
+}
+  
+details {
+  background: #f3f3f3; 
+  border-radius: 5px; 
+  margin-bottom: 1.5rem;
+}
+.button{
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #36aedd;
+  color:rgb(0, 0, 0);
+}
+summary {
+  background: #36aedd; 
+  color: rgb(0, 0, 0); 
+  cursor: pointer; 
+  padding: 1rem;
+  border-radius: 5px;
+}
+.akkordeon-inhalt {
+  padding: 1rem 1rem 1px 1rem;
+}
+
+/* Der verzögerungseffekt */
+details[open] summary ~ * {animation: sweep .7s ease-in-out;}
+
+@keyframes sweep {
+0%    {opacity: 0; margin-left: -20px}
+100%  {opacity: 1; margin-left: 0px}
+}
+  
+@media  (max-width:600px) {
+    
+    .sidebar {
+      display: flex;
+      align-items: center; 
+      justify-content: space-between; 
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+    }
+      .maincontent{
+        margin-left: 20px;
+       margin-top: 70px;
+    }
+    .sidebar a:not(:first-child){
+        display: none;
+    }
+      
+      
+      
+    .sidebar a{
+        border-radius: 5px;
+        color:black;
+        transition: 0.3s;
+      }
+      .sidebar a.menu-icon{
+        display: block;
+    }
+
+    
+    
+}
+
+@media (max-width:600px){
+    .sidebar.responsive{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+    .sidebar.responsive .menu-icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+      .sidebar.responsive a{
+       display: block;
+    }
+  }
+
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        .title{
+            text-align: center;
+            padding: 15px 36px;
+            font-size: 30px;
+            
+        }
+        .algo{
+            font-weight: bold;
+            
+        }
+        .buttons{
+            text-align: center;
+            padding: 15px 36px;
+        }
+        .add{
+            display:inline-block;
+            background-color: rgb(33, 229, 33);
+            color: rgb(2, 61, 2);
+            width: 100px;
+            height: 40px;
+            padding-top: 10px;
+            margin-right: 100px;
+            cursor: pointer;
+            border-radius: 5px;
+
+        }
+        .button{
+            padding-top: 10px;
+            background-color: rgb(142, 141, 141);
+            width: 100px;
+            height: 40px;
+            display:inline-block;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+        .button:hover{
+            background-color:rgb(181, 177, 177) ;
+        }
+        .imag{
+           
+            width: 100px;
+            height: 150px;
+        }
+        .image{
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .srcCode{
+            width: 700px;
+            height: auto;
+            border: solid 2px;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: rgba(21, 212, 21,.4);
+        }
+    </style>
+</head>
+<body>
+    <div class="title">
+        <h1>Topological Sort</h1>
+
+    </div>
+    <div class="algo">
+        <p style="font-size: 20px;">Geben Sie die Kanten des Graphes ein:  </p>
+        <div class="edge" id="divEdge">
+            <div class="image"> Beispiel: 
+                <img src="TopologicalOrdering-820x1024.png" alt="" class="imag">
+            </div>
+            <ul id="items">
+                <li id="item">
+                    <span>Edge 1 :</span>
+                    <input type="text" id="inpt1" placeholder="3"><input type="text" id="inpt2" placeholder="0" >
+                </li>
+                <li>
+                    <span>Edge 2 :</span>
+                    <input type="text" id="inpt3" placeholder="3"><input type="text" id="inpt4" placeholder="2" >
+                </li>
+                <li>
+                    <span>Edge 3 :</span>
+                    <input type="text" id="inpt5" placeholder="2"><input type="text" id="inpt6" placeholder="0" >
+                </li>
+                <li>
+                    <span>Edge 4 :</span>
+                    <input type="text" id="inpt7" placeholder="2"><input type="text" id="inpt8" placeholder="1" >
+                </li>
+            </ul>
+            
+        </div>
+        <div class="buttons">
+            <span class="add" id="btnAdd" >add Edge</span> 
+            <span class="button" id="btnSort">Sort</span>
+            <a href="topSort.html" class="button">New Graph</a>
+            <br>
+            
+        </div>
+        <p style="margin-left: 10px;" id="result"></p>
+        <div class="srcCode">
+            <h3>Source Code für die topologische Sortierung:</h3><br> 
+            <pre>
+                class Vorrang{
+   
+                    constructor(activity){
+                        this.activity=activity;
+                 
+                    }
+                    *[Symbol.iterator](){
+                    <span style="color: green;"> /* Erstelle eine Map, um festzustellen, wie viele Elemente 
+                     von jedem Element abhängen*/</span>
+                     const dependencies=new Map();
+                     for(const[item,dependency] of this.activity){
+                         if(!dependencies.has(item)){
+                             dependencies.set(item,0);
+                         }
+                         if(!dependencies.has(dependency)){
+                             dependencies.set(dependency,0);
+                         }
+                         dependencies.set(dependency,dependencies.get(dependency)+1);
+                     }
+                    <span style="color: green;"> /* Erstelle eine Queue mit allen Elementen, von denen keine anderen 
+                     Elemente abhängen*/</span>
+                     const queue=[...dependencies.keys()].filter(item =>
+                     dependencies.get(item)===0);
+                 
+                    <span style="color: green;"> // Erstelle eine sortierte Liste</span>
+                     const sorted=[];
+                 
+                     <span style="color: green;">/* Iteriere über die Queue und verarbeite jedes Element, indem du 
+                     es von der Queue entfernst und die Anzahl der Elemente reduzierst, 
+                     die von seiner Abhängigkeit abhängen*/</span>
+                 
+                     while(queue.length>0){
+                         const item=queue.shift();
+                         dependencies.delete(item);
+                         sorted.push(item);
+                 
+                         for(const[otherItem,dependency] of this.activity){
+                             if(otherItem===item){
+                                 dependencies.set(dependency,dependencies.get(dependency)-1)
+                 
+                                 if(dependencies.get(dependency)===0){
+                                     queue.push(dependency);
+                                 }
+                             }
+                         }
+                     }
+                 
+                     if (dependencies.size > 0) {
+                       throw new Error('Cyclic dependency detected');
+                     }
+                 
+                     for (const item of sorted) {
+                       yield item;
+                     }
+                 
+                 
+                    }
+                    
+                 } 
+                
+            </pre>
+        </div>
+      
+
+    </div>
+    <script src="topSort.js"></script>
+</body>
+</html>

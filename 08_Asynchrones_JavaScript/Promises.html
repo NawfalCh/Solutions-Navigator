@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+    <style>
+        div{
+            width: 500px;
+            height: auto;
+            margin-top: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div  id="container">
+    
+        
+
+    </div>
+
+    <script>
+        //helper funktion um die beide .txt parallel zu fetchen
+        function fetchText(file) {
+           return new Promise((resolve, reject) => {
+              fetch(file)
+                 .then(response => response.text())
+                 .then(text => resolve(text))
+                 .catch(error => reject(error));
+            });
+       }
+
+       window.onload=function(){
+        //beide .txt parallel fetchen
+        Promise.all([fetchText('text1.txt'), fetchText('text2.txt')])
+        .then(texts=>{
+             
+            let konkatTexts=texts[0]+texts[1];
+
+            document.getElementById('container').innerHTML=konkatTexts;
+            console.log(texts[1]);
+        })
+        .catch(error=> console.log(error));
+
+
+       }
+    </script>
+    
+</body>
+</html>

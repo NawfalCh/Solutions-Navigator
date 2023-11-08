@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            
+        }
+        h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+            font-weight: bolder;
+        }
+        body{
+            background-color: #a9d7d1;
+        }
+        .container{
+            margin-left: 30px;
+            margin-right: 30px;
+            background-color: rgb(241, 241, 241);
+            border-radius: 3px;
+        }
+        .row{
+           
+            width: 100%;
+        }
+        .labelCol{
+            padding-right: 15px;
+            padding-top: 9px;
+            margin-top: 30px;
+            float: left;
+            width: 50%;
+            text-align: right;
+           
+        }
+        .inputCol{
+            margin-top: 30px;
+            float: left;
+            width: 50%;
+           
+           
+
+        }
+        .row::after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .inputwith{
+           width: 400px;
+           height: 40px;
+           
+        }
+        select{
+            
+            width: 150px;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1 > Survey Form</h1>
+    <div class="container">
+         <p style="text-align: center; padding-top: 30px;">Let us know how we can improve freeCodeCamp</p>
+         <div class="row">
+            <div class="labelCol">
+                <label>*Name:</label>
+
+            </div>
+            <div class="inputCol">
+                <input class="inputwith" type="text" placeholder="Enter your name">
+
+            </div>
+         </div> 
+            <div class="row">
+                <div class="labelCol">
+                    <label>*Email:</label>
+    
+                </div>
+                <div class="inputCol">
+                    <input class="inputwith" type="text" placeholder="Enter yout Email">
+    
+                </div>
+            
+             </div>
+             <div class="row">
+                <div class="labelCol">
+                    <label>*Age:</label>
+    
+                </div>
+                <div class="inputCol">
+                    <input class="inputwith" type="number" placeholder="Age">
+    
+                </div>
+            
+             </div>
+             <div class="row">
+                <div class="labelCol">
+                    <label>Which option best describes yout current role?</label>
+    
+                </div>
+                <div class="inputCol">
+                    <select>
+                        <option >Student</option>
+                        <option >Student1</option>
+                        <option >Student2</option>
+                        <option >Student3</option>
+                    </select>
+    
+                </div>
+            
+             </div>
+             <div class="row">
+                <div class="labelCol">
+                    <label>*How likely is that you would recommend freeCodeCamp to a friend?</label>
+    
+                </div>
+                <div class="inputCol">
+                    <input type="radio" name="g">Definitly
+                    <br>
+                    <br>
+                    <input type="radio" name="g">Maybe
+                    <br>
+                    <br>
+                    <input type="radio" name="g">Not sure
+    
+                </div>
+            
+             </div>
+             <div class="row">
+                <div class="labelCol">
+                    <label>What do you like most in FCC:</label>
+    
+                </div>
+                <div class="inputCol">
+                    <select>
+                        <option hidden >Select an option</option>
+                        <option >Option1</option>
+                        <option >Option2</option>
+                        <option >Option3</option>
+                    </select>
+    
+                </div>
+            
+             </div>
+             <div class="row">
+                <div class="labelCol">
+                    <label>Things that schould be improved in the future (Check all that apply):</label>
+    
+                </div>
+                <div class="inputCol">
+                    <input type="checkbox">Front-end Projects
+                    <br>
+                    <br>
+                    <input type="checkbox">Back-end Projects
+                    <br>
+                    <br>
+                    <input type="checkbox">Data Visualization
+                    
+    
+                </div>
+            
+             </div>
+
+    </div>
+</body>
+</html>

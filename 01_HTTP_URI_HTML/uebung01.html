@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet"
+     href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+    <script src="https://kit.fontawesome.com/54250ed647.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
+
+    <title>WebEng</title>
+</head>
+<body>
+   
+    <div class="sidebar" id="sidebar">
+        <a href="../index.html"><i class="fa-solid fa-house"></i></a>
+        <a href="../01_HTTP_URI_HTML/uebung01.html">01 Einfürung</a>
+        <a href="../02_CSS/uebung02.html">02 CSS</a>
+        <a href="../03_RWD/uebung03.html">03 RWD</a>
+        <a href="../05_DOM/uebung05.html">05 DOM</a>
+        <a href="../06_ECMAScript/uebung06.html">06 ECMAScript</a>
+        <a href="../07_Funktionale_Prog/uebung07.html">07 Funktionale prog</a>
+        <a href="../08_Asynchrones_JavaScript/uebung08.html">08 Asynchrones JavaScript</a>
+        <a href="#menu" class="menu-icon">
+            <i class="fa-solid fa-bars" onclick="myFunction()"></i>
+        </a>  
+    </div>
+    <div class="maincontent"> 
+        <h1>Übung 1: HTTP, URI und HTML</h1>
+        <details>
+            <summary>1.1 Fachliche Argumentation über Erfolgsprinzipien des WWW</summary>
+            <div class="akkordeon-inhalt">
+                <details>
+                    <summary>Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?</summary>
+                    <div class="akkordeon-inhalt">
+                        <p>Zum einen wurde die gezielte Evolvierbarkeit mit Vagheit verwechselt.
+                            Zum anderen besteht im WWW die Möglichkeit für "broken links", die ins Leere führen.
+                            Dies wurde von der Hypertext Community als Rückschritt empfunden, zumal dem Proposal an
+                            mathematischer Rigorosität mangelte und die Community ein Objekt- über einem Text-Protokoll
+                            bevorzugte.
+                        </p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</summary>
+                    <div class="akkordeon-inhalt">
+                        <ul>
+                            <li>Unterschiedliche Technologien des WWW können sich unabhängig voneinander weiterentwickeln
+                                ohne zentrale Kontrolle
+                            </li>
+                            <li>Kostenfreie Nutzung</li>
+                            <li>Offenheit, Erweitbarkeit</li>
+                            <li>Standardisierung</li>
+                        </ul>
+                    </div>
+                </details>
+                <details>
+                    <summary>Was wäre der Preis für die garantierte Verhinderung von “broken links”?</summary>
+                    <div class="akkordeon-inhalt">
+                        <p>Zentrale Kontrolle und Geschlossenheit.</p>
+                    </div>
+                </details>
+            </div>
+        </details>
+        <details>
+            <summary>1.2 HTTP</summary>
+            <div class="akkordeon-inhalt">
+                <details>
+                    <summary>Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?</summary>
+                    <div class="akkordeon-inhalt">
+                        <p>"OK" - Anfrage wurde erfolgreich bearbeitet. Das Ergebnis wird in der Response übertragen</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?</summary>
+                    <div class="akkordeon-inhalt">
+                        <p>"Moved Permanently" - Die Adresse, an welche die Request gesendet wurde ist nicht mehr gültig und
+                            die angeforderte Ressource ist nun unter einer anderen Adresse erreichbar, die im
+                            "Location"-Header-Feld der Response angegeben ist.</p>
+                    </div>
+                </details>
+                <details>
+                    <summary>Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie
+                        dagegen tun?
+                    </summary>
+                    <div class="akkordeon-inhalt">
+                        <p>"Bad Request" - Der Server konnte die Anfrage nicht bearbeiten, da der Client bei dieser einen
+                            Fehler gemacht hat, z.B. einen Syntaxfehler. Für das Auftreten dieser Fehlermeldung kann es
+                            verschiedene Gründe haben.</p>
+                        <ol>
+                            <li>
+                                In der URL befindet sich ein Syntaxfehler wie unzulässige Zeichen.
+                                -> URL überprüfen
+                            </li>
+                            <li>
+                                Fehlerhafte oder alte Cookies innerhalb des Browsers und/oder beschädigte Dateien im
+                                Cache >Cookies und Cache löschen
+                            </li>
+                            <li>
+                                Veraltete DNS-Einträge im DNS-Cache, die auf falsche IP-Adressen verweisen.
+                                -> DNS-Cache löschen
+                            </li>
+                            <li>
+                                Beim Versuch zu großer Dateien kann dieser Fehler ebenfalls auftreten
+                                -> Nach Möglichkeit Dateigröße minimieren, z.B. durch geringere Bildqualität, Zippen der
+                                Datei, ...
+                            </li>
+                            <li>
+                                Der Server beschränkt die Header Lines und die verwendete Header Line ist zu lang
+                                -> Evtl. Request auf in einem anderen Browser testen, um zu prüfen, ob dieser den Fehler
+                                verursacht
+                            </li>
+                        </ol>
+    
+                    </div>
+                </details>
+                <details>
+                    <summary>Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie
+                        dagegen tun?
+                    </summary>
+                    <div class="akkordeon-inhalt">
+                        <p>"Forbidden" - Der Server verweigert die gewünschte Response, da der Client keine Zugriffsrechte
+                            für die Ressource hat</p>
+                        <ul>
+                            <li>Evtl. ist ein Fehler in der URL und man versucht auf ein Verzeichnis zuzugreifen, zu welchem
+                                "Normale Nutzende" keinen Zugriff haben -> URL überprüfen
+                            </li>
+                            <li>Die Seite arbeitet mit Login Tokens (wie die WEM-App) und im Session Storage befindet ich
+                                ein veraltetes, ungültiges Token. -> Logout, Login
+                            </li>
+                            <li>Ungültige/Korrupte Cookies, die Authenticationinformationen speicher -> Cookies löschen</li>
+                            <li>Browser Extensions, Plugins können Probleme verursachen -> deinstallieren</li>
+                        </ul>
+    
+                    </div>
+                </details>
+                <details>
+                    <summary>In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem
+                        eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein.
+                        Wie könnten Sie dafür eine Lösung angehen?
+                    </summary>
+                    <div class="akkordeon-inhalt">
+                        <p><u>Cachen für Browser:</u><br>
+                            In den Headers der OPTIONS-Anfrage kann man das "Access-Control-Max-Age" erhöhen, sodass die
+                            OPTIONS-Anfrage weniger häufig gestellt werden muss:<br>
+                            Access-Control-Max-Age: 86400<br>
+                            Die Browser haben verschiedene Maximalwerte. Firefox setzt das Maximum auf 24 Stunden (86400
+                            Sekunden), Chromium-basierte auf 2 Stunden.<br><br>
+    
+                            <u>Cachen für andere Systeme zwischen API und Browser:</u><br>
+                            Header hinzufügen:<br>
+                            Cache-Control: public, max-age=86400<br>
+                            Vary: origin</p>
+                    </div>
+                </details>
+            </div>
+        </details>
+        <details>
+            <summary>1.3. HTML Wireframe</summary>
+            <div class="akkordeon-inhalt">
+                <a class="button" href="#code">Code</a><br>
+                <iframe frameborder="0" style="width: 100%; height: 100vh; margin-top: 1em"
+                            src="U1_HTML Wireframe.html"></iframe>
+            </div>
+        </details>
+
+       
+        
+
+    </div>
+
+    <script >
+        function myFunction() {
+            const x = document.getElementById("sidebar");
+            if (x.className === "sidebar") {
+                x.className += " responsive";
+            } else {
+                x.className = "sidebar";
+            }
+        }
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex Responsive</title>
+    <style>
+        html{
+            height: 100vh;
+        }
+        *{
+            box-sizing: border-box;
+            text-align: center;
+        }
+        body{
+            margin: 0;
+        }
+        .container{
+            display: flex;
+            flex-direction: column;
+            
+            height: 100vh;
+        }
+        .header{
+            background-color: coral;
+            flex: 15%;
+          
+        }
+        .flex1{
+            display: flex;
+            flex: 85%;
+        }
+        .flex2{
+            display: flex;
+            flex: 75%;
+        }
+        .side{
+            flex: 25%;
+            background-color: rgb(117, 182, 21);
+        }
+        .maincontent{
+            flex: 50%;
+            background-color: rgba(15, 52, 153,.5);
+        }
+        .footer{
+            background-color: blueviolet;
+            flex: 25%;
+        }
+        @media (max-width:700px){
+            .flex1{
+                flex-direction: column;
+            }
+         }
+         @media(max-width:250px){
+            .flex2{
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header"> Header</div>
+        <div class="flex1">
+            <div class="flex2">
+                <div class="side"> side</div>
+                <div class="maincontent"> maincontent</div>
+            </div>
+            <div class="footer">footer</div>
+        </div>
+
+    </div>
+    
+</body>
+</html>
